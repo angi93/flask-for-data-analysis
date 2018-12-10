@@ -1,0 +1,8 @@
+{
+  "Historic_series_plot": {"type": "radio",
+                           "parameters": ["Yes", "No"]
+  },
+  "Linear_regression_plot": {"type": "radio",
+                             "parameters": ["Yes", "No"]
+  }
+}

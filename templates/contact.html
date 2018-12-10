@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Insubria Test</title>
+    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <script src="../static/js/scripts.js"></script>
+</head>
+
+{% block body %}
+    {% if session['logged_in'] %}
+       <nav class="navbar navbar-expand-md bg-primary navbar-dark border border-dark">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="../static/img/insubria.png" width="" height="" class="d-inline-block align-top" alt=""> </a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                <a class="nav-link" href="/userpage">User page</a>
+                <a class="nav-link" href="/contact">Contact Us</a>
+                <a class="nav-link" href="/userdata">{{ session['name'] }}</a>
+                <a class="nav-link" href="/logout">Logout</a>
+
+              </div>
+            </div>
+          </nav>
+    {% else %}
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark border border-dark">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="../static/img/insubria.png" width="" height="" class="d-inline-block align-top" alt=""> </a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                     <a class="ml-3 btn navbar-btn btn-primary" onclick="goContact()">Contact Us</a>
+                     <a class="btn navbar-btn ml-2 btn-secondary" onclick="goLogin()"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>
+                     <a class="ml-3 btn navbar-btn btn-primary" onclick="goRegistration()">Sign Up</a>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    {% endif %}
+
+  <div class="py-5 bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img class="d-block img-fluid my-3" src="../static/img/contact-us.jpg"> </div>
+        <div class="col-md-6">
+          <h1>Contact us</h1>
+          <p>We would love to hear from you</p>
+          <form>
+            <div class="form-group"> <label for="InputName">Your name</label>
+              <input class="form-control" id="InputName" placeholder="Your name" type="text"> </div>
+            <div class="form-group"> <label for="InputEmail1">Email address</label>
+              <input class="form-control" id="InputEmail1" placeholder="Enter email" type="email"> </div>
+            <div class="form-group"> <label for="Textarea">Write here</label> <textarea class="form-control" id="Textarea" rows="3" placeholder="Type here"></textarea> </div>
+            <button type="button">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mt-3">
+          <p class="text-center text-white">© Copyright 2018 Insubria Test - All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+</html>

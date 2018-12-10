@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/modal.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/iziToast.min.css" type="text/css">
+  <script src="../static/js/scripts.js"></script>
+  <script src="../static/js/iziToast.min.js"></script>
+  <script src="../static/js/iziToastFunctions.js"></script>
+  <script src="../static/js/userdata.js"></script>
+  <script src="../static/js/modal.js"></script>
+</head>
+
+{% block body %}
+    {% if session['logged_in'] %}
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark border border-dark">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="../static/img/insubria.png" width="" height="" class="d-inline-block align-top" alt=""> </a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                <a class="nav-link" href="/userpage">User page</a>
+                <!--<a class="nav-link" href="/contact">Contact Us</a>-->
+                <a class="nav-link" href="/userdata">{{session['name']}}</a>
+                <a class="nav-link" href="/logout">Logout</a>
+              </div>
+            </div>
+          </nav>
+
+    <div class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2>Account detail</h2>
+              <hr class="mb-4"> </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 p-3">
+              <ul class="list-group" id="files">
+                <li class="list-group-item" style="font-size: large">{{ session['name'] }}    {{ session['surname'] }}</li>
+                <li class="list-group-item" style="font-size: large">{{ session['email'] }}</li>
+                <button onclick="openConfig()">Change Password</button>
+                <button onclick="deleteAccount()">Delete Account</button>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endif %}
+
+  <div class="bg-dark text-white">
+    <div class="container">
+      </div>
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="text-center text-white">© Copyright 2018 Insubria Test - All rights reserved. </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- The Modal for change the account password-->
+    <div id="modalPassword" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+          <p><h4>Change your password</h4></p>
+          <form id="config_form">
+                <div class="form-group"> <label>Old Password</label>
+                  <input class="form-control" placeholder="Old Password" id="oldPassword" type="password"> </div>
+                <div class="form-group"> <label>Password</label>
+                  <input type="password" class="form-control" id="newPassword1" placeholder="New Password"> </div>
+                <div class="form-group"> <label>Repeat Password</label>
+                  <input type="password" class="form-control" id="newPassword2" placeholder="New Password"> </div>
+              <hr>
+          </form>
+          <button onclick="changePassword()" data-toggle="tooltip">Confirm</button>
+        </div>
+    </div>
+{% endblock %}
+
+</html>

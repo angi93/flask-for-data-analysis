@@ -1,0 +1,2 @@
+{"filename":"Serie_Storica.R","instruction":"Questa volta parliamo di come effettuare analisi delle serie storiche con il software R. Per analizzare una serie storica dobbiamo averne una. Io che ogni tanto sbarco sul sito del settimanale internazionale ho memoria di una serie storica il cui grafico è apparso in un post sul sito di internazionale",
+"help":"Proviamo quindi a studiare con R i dati relativi alle concentrazioni mensili di Co2 dal 1958 ad oggi"}

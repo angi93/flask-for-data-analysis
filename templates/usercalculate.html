@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insubria Test</title>
+    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/modal.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/vertical-menu.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/iziToast.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <script src="../static/js/iziToast.min.js"></script>
+    <script src="../static/js/iziToastFunctions.js"></script>
+    <script src="../static/js/dynamic_parameters.js"></script>
+</head>
+
+{% block body %}
+    {% if session['logged_in'] %}
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark border border-dark">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="../static/img/insubria.png" width="" height="" class="d-inline-block align-top" alt=""> </a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                <a class="nav-link" href="/userpage">User page</a>
+                <!--<a class="nav-link" href="/contact">Contact Us</a>-->
+                <a class="nav-link" href="/userdata">{{ session['name'] }}</a>
+                <a class="nav-link" href="/logout">Logout</a>
+              </div>
+            </div>
+          </nav>
+    {% endif %}
+
+  <!--<div class="py-5 text-center opaque-overlay " style="background-image: url(../static/img/data.jpg); background-repeat: no-repeat; background-size: auto;">-->
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>Load CSV file</h2>
+          <hr class="mb-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 p-3" id="divform">
+            <form id="config_form">
+
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-dark text-white">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="text-center text-white">© Copyright 2018 Insubria Test - All rights reserved. </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+    <!-- The Modal Spinner-->
+	<div id="modalSpinner" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+           <div class="spinner">
+              <div class="rect1"></div>
+              <div class="rect2"></div>
+              <div class="rect3"></div>
+              <div class="rect4"></div>
+              <div class="rect5"></div>
+           </div>
+        </div>
+	</div>
+
+{% endblock %}
+
+</html>

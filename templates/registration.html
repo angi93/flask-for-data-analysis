@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insubria Test</title>
+    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/iziToast.min.css" type="text/css">
+    <script src="../static/js/registration.js"></script>
+    <script src="../static/js/iziToast.min.js"></script>
+    <script src="../static/js/iziToastFunctions.js"></script>
+</head>
+
+{% block body %}
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark border border-dark">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="../static/img/insubria.png" width="" height="" class="d-inline-block align-top" alt=""> </a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                     <!--<a class="ml-3 btn navbar-btn btn-primary" onclick="location.replace('/contact')">Contact Us</a>-->
+                     <a class="btn navbar-btn ml-2 btn-secondary" onclick="location.replace('/login')"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>
+                     <a class="ml-3 btn navbar-btn btn-primary" onclick="location.replace('/registration')">Sign Up</a>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+  
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"> </div>
+        <div class="col-md-6">
+          <div class="card p-5 bg-primary">
+            <div class="card-body">
+              <h1 class="mb-4">Registration</h1>
+              <form>
+			    <div class="form-group"> <label>Name</label>
+                  <input class="form-control" placeholder="Name" id="name" name="name" type="text"> </div>
+				<div class="form-group"> <label>Surname</label>
+                  <input class="form-control" placeholder="Surname" id="surname" name="surname" type="text"> </div>
+                <div class="form-group"> <label>Email address</label>
+                  <input class="form-control" placeholder="Enter email" id="email" name="email" type="email"> </div>
+                <div class="form-group"> <label>Password</label>
+                  <input class="form-control" placeholder="Password" id="pass1" name="pass1" type="password"> </div>
+				<div class="form-group"> <label>Repeat Password</label>
+                  <input class="form-control" placeholder="Password" id="pass2" name="pass2" type="password"> </div>
+              </form>
+                <input id="accept" type="checkbox" value="accept" onchange="enableDisableButton()"/>
+                <a href="/terms" target="_blank">Terms and Conditions</a>
+                <button id="registrationBtn" onclick="doRegistration()" disabled="true">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mt-3">
+          <p class="text-center text-white">© Copyright 2018 Insubria Test - All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+{% endblock %}
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insubria Test</title>
+    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <script src="../static/js/scripts.js"></script>
+</head>
+
+{% block body %}
+    {% if session['logged_in'] %}
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark border border-dark">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="../static/img/insubria.png" width="" height="" class="d-inline-block align-top" alt=""> </a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                <a class="nav-link" href="/userpage">User page</a>
+                <!--<a class="nav-link" href="/contact">Contact Us</a>-->
+                <a class="nav-link" href="/userdata">{{ session['name'] }}</a>
+                <a class="nav-link" href="/logout">Logout</a>
+
+              </div>
+            </div>
+          </nav>
+    {% else %}
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark border border-dark">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="../static/img/insubria.png" width="" height="" class="d-inline-block align-top" alt=""> </a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+              <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                     <!--<a class="ml-3 btn navbar-btn btn-primary" onclick="goContact()">Contact Us</a>-->
+                     <a class="btn navbar-btn ml-2 btn-secondary" onclick="location.replace('/login')"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>
+                     <a class="ml-3 btn navbar-btn btn-primary" onclick="location.replace('/registration')">Sign Up</a>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    {% endif %}
+
+  <div class="py-5 text-center opaque-overlay text-white" style="background-image: url(../static/img/data.jpg); background-repeat: no-repeat; background-size: auto;">
+    <div class="container" id="cont">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-light">Data analysis</h1>
+              <p class="text-light">Data analysis is a process of inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.
+                                    Data analysis has multiple facets and approaches, encompassing diverse techniques under a variety of names, while being used in different business, science, and social science domains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <img class="img-fluid d-block w-100 mb-3 rounded" src="../static/img/data_analisys.jpeg">
+              <p class="">Once processed and organised, the data may be incomplete, contain duplicates, or contain errors. The need for data cleaning will arise from problems in the way that data are entered and stored. Data cleaning is the process of preventing and correcting these errors. Common tasks include record matching, identifying inaccuracy of data, overall quality of existing data,[5] deduplication, and column segmentation.[6] Such data problems can also be identified through a variety of analytical techniques. For example, with financial information, the totals for particular variables may be compared against separately published numbers believed to be reliable.[7] Unusual amounts above or below pre-determined thresholds may also be reviewed. There are several types of data cleaning that depend on the type of data such as phone numbers, email addresses, employers etc. Quantitative data methods for outlier detection can be used to get rid of likely incorrectly entered data. Textual data spell checkers can be used to lessen the amount of mistyped words, but it is harder to tell if the words themselves are correct.</p>
+            </div>
+            <div class="col-md-6">
+              <img class="img-fluid d-block w-100 mb-3 rounded" src="../static/img/data_analisys2.jpeg">
+              <p class="">Mathematical formulas or models called algorithms may be applied to the data to identify relationships among the variables, such as correlation or causation. In general terms, models may be developed to evaluate a particular variable in the data based on other variable(s) in the data, with some residual error depending on model accuracy (i.e., Data = Model + Error).
+Inferential statistics includes techniques to measure relationships between particular variables. For example, regression analysis may be used to model whether a change in advertising (independent variable X) explains the variation in sales (dependent variable Y). In mathematical terms, Y (sales) is a function of X (advertising). It may be described as Y = aX + b + error, where the model is designed such that a and b minimize the error when the model predicts Y for a given range of values of X. Analysts may attempt to build models that are descriptive of the data to simplify analysis and communicate results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center display-3 text-primary">Article title</h1>
+          <p class="">In the main analysis phase analyses aimed at answering the research question are performed as well as any other relevant analysis needed to write the first draft of the research report.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-dark text-white">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="text-center text-white">© Copyright 2018 Insubria Test - All rights reserved. </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+{% endblock %}
+
+</html>
