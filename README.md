@@ -30,13 +30,13 @@ In the following page you can do:
 - Select the analysis that you want to execute.
 - Select the dataset that are presents on your account.
 
-![](/home/angelo/Desktop/img1.png)
+![](static/img/img1.png)
 
 
 
 One useful function is when you select one dataset from the list, this will be upload on the browser so you can see if should be fine or if contains the expected data.
 
-![](/home/angelo/Desktop/img2.png)
+![](static/img/img2.png)
 
 
 
@@ -44,7 +44,7 @@ When you press *Start calculation*, you will be redirect to the following page w
 
 
 
-![](/home/angelo/Desktop/img3.png)
+![](static/img/img3.png)
 
 
 
@@ -59,11 +59,11 @@ Finally, when you press the *Start calculation* button all the parameters are se
 
 Here are reported some results generated from the analysis that doesn't do anything special, just analyze an historic series.
 
-![](/home/angelo/Documents/Thesis/Thesis_Latex/Figures/data2.png)
+![](static/img/data2.png)
 
 
 
-![](/home/angelo/Documents/Thesis/Thesis_Latex/Figures/data1.png)
+![](static/img/data1.png)
 
 
 
